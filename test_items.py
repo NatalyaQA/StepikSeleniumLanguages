@@ -20,5 +20,7 @@ class TestProductPage:
         time.sleep(5)
 
         # Проверяем наличие кнопки добавления товара в корзину
-        assert browser.find_element(By.CSS_SELECTOR, "button.btn-add-to-basket")
+        button = browser.find_element(By.CSS_SELECTOR, ".btn-add-to-basket")
+        assert button is not None
+        
 
