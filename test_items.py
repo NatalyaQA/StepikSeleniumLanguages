@@ -17,7 +17,7 @@ class TestProductPage:
 
         # Установлено время принудительной задержки браузера
         # после открытия страницы, для визуальной проверки языка открытой страницы
-        time.sleep(30)
+        time.sleep(5)
 
         # Проверяем наличие кнопки добавления товара в корзину
         assert browser.find_element(By.CSS_SELECTOR, "button.btn-add-to-basket")
