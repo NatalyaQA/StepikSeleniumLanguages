@@ -1,7 +1,5 @@
-# import pytest
+#import pytest
 from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
 import time
 
 link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
@@ -20,7 +18,12 @@ class TestProductPage:
         time.sleep(5)
 
         # Проверяем наличие кнопки добавления товара в корзину
+        """плохая реализация
         button = browser.find_element(By.CSS_SELECTOR, ".btn-add-to-basket")
         assert button is not None
-        
-
+        """
+        y = len(browser.find_elements(By.CSS_SELECTOR, ".btn-add-to-basket"))  # y = длина списка найденных элементов 
+        # y = len(browser.find_elements(By.CSS_SELECTOR, ".to-basket"))  # пробуем сломать
+        print("количество элементов:", y)  # необязательно - просто вывести на печать значение y
+        assert y > 0, 'Cелектор кнопки не найден'
+       
